@@ -11,6 +11,7 @@ public class TriggerDeath : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         onTriggerEnter.Invoke();
+
     }
 
     void OnTriggerExit(Collider other)

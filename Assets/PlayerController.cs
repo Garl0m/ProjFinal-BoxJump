@@ -12,6 +12,13 @@ public class PlayerController : MonoBehaviour
 
     public bool grounded;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +41,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded == true)
         {
             rb.AddRelativeForce(Vector3.up * 1200);
+            audioManager.PlasySFX(audioManager.jump);
         }
 
         if (!grounded)
@@ -62,5 +70,6 @@ public class PlayerController : MonoBehaviour
     public void PlayerDeath()
     {
         transform.position = new Vector3(0, 0, 0);
+        audioManager.PlasySFX(audioManager.death);
     }
 }

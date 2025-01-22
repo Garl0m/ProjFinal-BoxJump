@@ -13,7 +13,7 @@ public class SceneController : MonoBehaviour
     private void Awake()
     {
         _sceneFade = GetComponentInChildren<SceneFade>();
-
+        
     }
 
     private IEnumerator Start()
@@ -23,7 +23,9 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadSceneCoroutine(sceneName)); 
+        Time.timeScale = 1f;
+        StartCoroutine(LoadSceneCoroutine(sceneName));
+        Cursor.visible = false;
     }
 
     private IEnumerator LoadSceneCoroutine(string sceneName)

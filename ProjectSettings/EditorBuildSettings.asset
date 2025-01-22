@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InvertScene.unity
     guid: eb81f1cd16ff9a848b50fefadac80d62
+  - enabled: 1
+    path: Assets/Scenes/WinMenuScene.unity
+    guid: a7bd6deda8e0e514d9a1319d62fbfe02
   m_configObjects: {}
